@@ -1,0 +1,429 @@
+:root {
+  --primary-color: #005DAA;
+  --secondary-color: #00C9A7;
+  --highlight-color: #F4A300;
+  --text-light: white;
+  --text-dark: #404040;
+}
+
+/* General Styles */
+body {
+  overflow-x: hidden;
+  background-color: #e8e9ea;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-light);
+}
+
+header, nav {
+  width: 100%;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  color: var(--text-light);
+  text-align: center;
+  padding: 20px;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  padding: 10px;
+  font-weight: bold;
+}
+
+nav a {
+  margin: 0 15px;
+  /* font-weight: bold; */
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.gradient-text {
+  font-size: 48px;
+  font-weight: bold;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+main {
+  padding: 20px;
+  color: black;
+}
+
+footer {
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+}
+
+/* Layouts */
+#LR {
+  display: flex;
+  padding: 10px;
+}
+
+#LR div {
+  width: 48%;
+}
+
+.outer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 650px;
+}
+
+.inner1 {
+  height: 90%;
+  width: 48%;
+  margin: 20px 15px 20px 20px;
+  font-weight: bold;
+  color: white;
+  font-size: 28px;
+  text-align: end;
+  background-image: url("kaz.avif");
+  background-size: cover;
+  background-position: center;
+}
+
+.inner2 {
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  height: 90%;
+  width: 48%;
+  margin: auto;
+  text-align: center;
+  color: white;
+}
+
+.inner2 h3 {
+  font-weight: bold;
+}
+
+#left {
+  background-image: url("students.avif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  width: 90%;
+  padding: 15px;
+  margin-right: 15px;
+}
+
+#left:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+#left h2 {
+  font-weight: bold;
+  background: linear-gradient(90deg, #fff707, #5af5db);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+#right h2 {
+  color: var(--text-dark);
+}
+
+/* Contact Form */
+#contact-form {
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  padding: 20px;
+  border-radius: 40px;
+  max-width: 95vh;
+  margin: 40px 25px 30px 40px;
+}
+
+#country-code {
+  width: 20%;
+}
+
+form input, form select {
+  width: 80%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form input[type="submit"] {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+form input[type="submit"]:hover {
+  background-color: var(--primary-color);
+}
+
+/* Cards and Buttons */
+.cardOuter button,
+.flip-card-back button,
+.inner2 button 
+#flipcard4 button
+{
+  border: none;
+  outline: 0;
+  border-radius: 5px 14px;
+  padding: 12px;
+  color: white;
+  background-color: var(--highlight-color);
+  text-align: center;
+  cursor: pointer;
+  width: 40%;
+  font-size: 18px;
+}
+
+.cardOuter button:hover,
+.flip-card-back button:hover,
+.inner2 button:hover {
+  box-shadow: 8px 8px 16px 0 rgba(0.2, 0.3, 0.5, 0.2);
+  opacity: 0.9;
+}
+
+/* Flip Cards */
+.mainflip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  align-items: flex-start; /* Align all cards at the top */
+} 
+
+.flip-card {
+  width: 45%;
+  height: 300px;
+  margin: 15px;
+  background-color: transparent;
+  perspective: 1000px;
+  position: relative;
+}
+
+.flip-card-inner {
+  color: white;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back  {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  backface-visibility: hidden;
+}
+#flipcard4{
+  border-radius: 10px;
+}
+
+.flip-card-front {
+  background-size: cover;
+  background-position: center;
+  background-color: #bbb;
+}
+
+.mainflip .flip-card:nth-child(1) .flip-card-front {
+  background-image: url("./img/kaz.avif");
+}
+
+.mainflip .flip-card:nth-child(2) .flip-card-front {
+  background-image: url("centralavif.avif");
+}
+
+.mainflip .flip-card:nth-child(3) .flip-card-front {
+  background-image: url("tenet.avif");
+}
+
+.flip-card-back {
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  transform: rotateY(180deg);
+}
+
+/* Flip Card 4 Styling */
+#flipcard4 {
+  width: 45%;         /* Same width as other flip cards */
+  height: 300px;      /* Same height as others */
+  perspective: 1000px;
+  margin: 15px;
+}
+
+#flipcard4 .flip-card-inner {
+  border-radius: 10px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0s;
+  transform-style: preserve-3d;
+}
+
+#flipcard4 .flip-card-front,
+#flipcard4 .flip-card-back {
+  margin: 0px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  overflow-y: auto;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#flipcard4 .flip-card-front {
+  background: #005DAA;
+}
+
+#flipcard4 .flip-card-back {
+  transform: rotateY(180deg);
+  /* background: #f2f2f2; */
+}
+
+/* Ellipse container and cards */
+.ellipse-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.ellipse-card {
+  background-color: #ec9f3a;
+  border-radius: 30px;
+  padding: 20px;
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  font-size: 12px;
+}
+
+
+.ellipse-card h3 {
+  font-size: 13px;
+  margin: 5px 0;
+}
+
+.ellipse-card p {
+  font-size: 11px;
+  margin: 0;
+}
+
+
+
+/* #flipcard4 button a {
+  color: white;
+  text-decoration: none;
+} */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #LR {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .outer {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 80px;
+  }
+
+  .inner1, .inner2, #left {
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  .inner2 {
+    border: none;
+  }
+
+  .flip-card {
+    width: 90% !important;
+  }
+
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    max-width: 50%;
+    max-height: fit-content;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* Cards container */
+.card-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  flex: 1 1 300px;
+  max-width: 300px;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  color: white;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
